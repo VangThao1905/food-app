@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/category_page.dart';
+import 'package:foodapp/foods_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Food App with Navigation',
+        initialRoute: '/',
+        routes: {
+          '/FoodsPage': (context) => FoodsPage(),
+          '/CategoriesPage': (context) => CategoriesPage(),
+        },
         theme: ThemeData(
             primarySwatch: Colors.blue,
             fontFamily: 'Itim-Relugar',
@@ -25,7 +31,7 @@ class MyApp extends StatelessWidget {
             centerTitle: true,
             title: const Text('Food\'s categories'),
           ),
-          body: SafeArea(child: CategoryPage()),
+          body: SafeArea(child: CategoriesPage()),
         ));
   }
 }
