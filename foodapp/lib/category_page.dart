@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/category_item.dart';
+import 'package:foodapp/fake_data.dart';
 
 class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
-        children: [
-
-        ],
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 300,
-            childAspectRatio: 3 / 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10));
+      padding: EdgeInsets.all(12),
+      children:
+      //CategoryItem
+      FAKE_CATEGORIES
+          .map((eachCategory) => CategoryItem(category: eachCategory))
+          .toList(),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 300,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10)
+    );
   }
 }
